@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fashionholic — Curated men's fashion, honest prices</title>
+<meta name="description" content="Fashionholic is an independent affiliate storefront recommending men's printed shirts, t-shirts and casual wear with honest prices and clear affiliate disclosure.">
+<style>
+:root{
+  --bg:#fafaf8; --fg:#111111; --muted:#5c5c58; --accent:#8b2332;
+  --accent-fg:#fafaf8; --border:#e4e1db; --surface:#ffffff; --ink:#2a2a28;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:ui-serif,Georgia,"Times New Roman",Times,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
+@media(min-width:768px){.wrap{padding:0 2rem}}
+.disp{font-family:var(--serif)}
+.kicker{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.28em;color:var(--accent);margin:0}
+h2{font-family:var(--serif);font-size:1.875rem;line-height:1.2;margin:.75rem 0 0}
+@media(min-width:768px){h2{font-size:2.25rem}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr:focus{width:auto;height:auto;clip:auto;position:fixed;top:1rem;left:1rem;background:var(--fg);color:var(--bg);padding:.5rem 1rem;z-index:60}
+header{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--border);background:rgba(250,250,248,.92);backdrop-filter:blur(6px)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1rem;padding-bottom:1rem}
+.brand{font-family:var(--serif);font-size:1.25rem}
+nav.main{display:none;gap:1.75rem}
+nav.main a{font-size:.875rem;letter-spacing:.03em;color:var(--muted)}
+nav.main a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;font-size:.875rem;letter-spacing:.03em;background:var(--accent);color:var(--accent-fg)}
+nav.mob{display:flex;gap:.25rem;overflow-x:auto;border-top:1px solid var(--border);padding:.5rem .75rem}
+nav.mob a{white-space:nowrap;padding:.5rem .75rem;font-size:.875rem;color:var(--muted)}
+@media(min-width:768px){nav.main{display:flex}nav.mob{display:none}}
+section{border-bottom:1px solid var(--border)}
+.hero .grid{display:grid;gap:2.5rem;padding-top:4rem;padding-bottom:4rem}
+@media(min-width:768px){.hero .grid{grid-template-columns:repeat(12,1fr);padding-top:7rem;padding-bottom:7rem}.hero .a{grid-column:span 8}.hero .b{grid-column:span 4}}
+h1{font-family:var(--serif);font-size:3rem;line-height:1.05;margin:1rem 0 0}
+@media(min-width:768px){h1{font-size:4.5rem}}
+.tag{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--ink);margin:1.25rem 0 0}
+@media(min-width:768px){.tag{font-size:1.5rem}}
+.lede{max-width:36rem;font-size:1rem;color:var(--muted);margin:1.5rem 0 0}
+@media(min-width:768px){.lede{font-size:1.125rem}}
+.acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
+.acts a{display:inline-flex;align-items:center;min-height:3rem;padding:0 1.5rem;font-size:.875rem;letter-spacing:.03em}
+.acts .dark{background:var(--fg);color:var(--bg)}
+.acts .line{border:1px solid var(--fg)}
+.aside{display:flex;flex-direction:column;justify-content:flex-end}
+.aside .box{border:1px solid var(--border);background:var(--surface);padding:1.5rem}
+.aside .yr{font-family:var(--serif);font-size:2.5rem;line-height:1;margin:0}
+.aside p{font-size:.875rem;color:var(--muted);margin:.75rem 0 0}
+.pad{padding-top:4rem;padding-bottom:4rem}
+@media(min-width:768px){.pad{padding-top:6rem;padding-bottom:6rem}}
+.cards{display:grid;gap:1px;background:var(--border);margin-top:3rem}
+@media(min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
+.cards article{background:var(--bg);padding:2rem}
+.cards .n{font-family:var(--serif);font-size:.875rem;color:var(--accent);margin:0}
+.cards h3{font-family:var(--serif);font-size:1.5rem;margin:1rem 0 0}
+.cards p{font-size:.875rem;color:var(--muted);margin:.75rem 0 0}
+.sub{max-width:42rem;color:var(--muted);margin:1rem 0 0}
+.list{margin:2.5rem 0 0;padding:0;list-style:none;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.list li{border-bottom:1px solid var(--border)}
+.list li:last-child{border-bottom:0}
+.list a{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:1.25rem 0;min-height:4rem}
+.list a:hover .nm{color:var(--accent)}
+.list .row{display:flex;align-items:baseline;gap:1rem}
+.list .idx{font-family:var(--serif);font-size:.875rem;color:var(--muted);width:2rem}
+.list .nm{font-size:1.125rem;font-weight:500}
+@media(min-width:768px){.list .nm{font-size:1.25rem}}
+.list .note{display:none;font-size:.875rem;color:var(--muted)}
+@media(min-width:640px){.list .note{display:block}}
+.about .grid{display:grid;gap:2.5rem}
+@media(min-width:768px){.about .grid{grid-template-columns:repeat(12,1fr)}.about .a{grid-column:span 4}.about .b{grid-column:span 8}}
+.prose p{font-size:1rem;color:var(--ink);margin:0 0 1.25rem}
+.prose strong{color:var(--fg);font-weight:500}
+.mail{display:inline-block;margin-top:2rem;border-bottom:1px solid var(--accent);font-family:var(--serif);font-size:1.5rem;color:var(--accent)}
+@media(min-width:768px){.mail{font-size:1.75rem}}
+#privacy{background:var(--surface);border-bottom:0}
+.legal{max-width:48rem}
+.legal .date{font-size:.875rem;color:var(--muted);margin:.5rem 0 0}
+.legal .txt{margin-top:2.5rem;font-size:15px;line-height:1.7;color:var(--ink)}
+.legal .txt h3{font-family:var(--serif);font-size:1.25rem;color:var(--fg);margin:2rem 0 0}
+.legal .txt p{margin:0 0 1.25rem}
+footer{border-top:1px solid var(--border)}
+.foot{display:flex;flex-direction:column;gap:.75rem;padding-top:2rem;padding-bottom:2rem;font-size:.875rem;color:var(--muted)}
+.foot p{margin:0}
+@media(min-width:768px){.foot{flex-direction:row;align-items:center;justify-content:space-between}}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap hdr">
+    <a class="brand" href="#hero">Fashionholic</a>
+    <nav class="main" aria-label="Primary">
+      <a href="#what-we-do">What we do</a>
+      <a href="#categories">Shop</a>
+      <a href="#about">About</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#categories">Browse looks</a>
+  </div>
+  <nav class="mob" aria-label="Mobile">
+    <a href="#what-we-do">What we do</a>
+    <a href="#categories">Shop</a>
+    <a href="#about">About</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="hero">
+    <div class="wrap grid">
+      <div class="a">
+        <p class="kicker">Men's edit</p>
+        <h1>Fashionholic</h1>
+        <p class="tag">Curated men's fashion, honest prices.</p>
+        <p class="lede">We find printed shirts, t-shirts, and casual wear that actually look like the photos — then send you to the retailer with a clear price and an honest affiliate disclosure. No inventory. No markup. Just a shortlist.</p>
+        <div class="acts">
+          <a class="dark" href="#categories">Shop categories</a>
+          <a class="line" href="#about">How we work</a>
+        </div>
+      </div>
+      <aside class="aside b">
+        <div class="box">
+          <p class="yr">’26</p>
+          <p>Independent recommendations for men who want a look without shopping fifty tabs.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="what-we-do">
+    <div class="wrap pad">
+      <p class="kicker">What we do</p>
+      <h2>Three rules we don't break</h2>
+      <div class="cards">
+        <article>
+          <p class="n">01</p>
+          <h3>Curated Picks</h3>
+          <p>We hand-select printed shirts, tees, and casual pieces worth wearing — not a dump of every listing on the internet.</p>
+        </article>
+        <article>
+          <p class="n">02</p>
+          <h3>Real Prices</h3>
+          <p>The price you see is the live retail price at the time we check it. No inflated “was” tags, no fake scarcity.</p>
+        </article>
+        <article>
+          <p class="n">03</p>
+          <h3>No Middleman</h3>
+          <p>You buy directly from the retailer. We never take your payment, hold stock, or sit between you and the seller.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="wrap pad">
+      <p class="kicker">Categories</p>
+      <h2>What we recommend</h2>
+      <p class="sub">Jump to a category. Links on this page stay on-site; when we recommend a product, we send you to the retailer.</p>
+      <ul class="list">
+        <li><a href="#printed-shirts" id="printed-shirts"><span class="row"><span class="idx">01</span><span class="nm">Printed Shirts</span></span><span class="note">Statement collars &amp; vacation prints</span></a></li>
+        <li><a href="#t-shirts" id="t-shirts"><span class="row"><span class="idx">02</span><span class="nm">T-Shirts</span></span><span class="note">Everyday cotton, graphic and plain</span></a></li>
+        <li><a href="#casual-wear" id="casual-wear"><span class="row"><span class="idx">03</span><span class="nm">Casual Wear</span></span><span class="note">Shirts, knits, and weekend layers</span></a></li>
+        <li><a href="#festive-wear" id="festive-wear"><span class="row"><span class="idx">04</span><span class="nm">Festive Wear</span></span><span class="note">Occasion-ready colour and cut</span></a></li>
+        <li><a href="#accessories" id="accessories"><span class="row"><span class="idx">05</span><span class="nm">Accessories</span></span><span class="note">Chains, watches, finishing pieces</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap grid pad">
+      <div class="a">
+        <p class="kicker">About</p>
+        <h2>How this store works</h2>
+      </div>
+      <div class="prose b">
+        <p>Fashionholic is an editorial affiliate storefront, not a warehouse. We browse men's printed shirts, t-shirts, and casual wear, shortlist pieces we would actually wear, and publish them here with the current price we saw at the retailer. When you click through and buy, the retailer fulfils the order. We never handle your payment, size, or delivery.</p>
+        <p><strong>We use affiliate links.</strong> If you purchase through a link we share, we may earn a commission from the retailer at no extra cost to you. That commission is how the site stays online. It does not change the price you pay, and it does not let us invent stock we do not have. If a link is an affiliate link, treat it as an advertisement for that product — still independently chosen, still honestly labelled.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap pad">
+      <p class="kicker">Contact</p>
+      <h2>Write to us</h2>
+      <p class="sub">Questions about a look, a broken link, or this policy — email the editor. We read every message.</p>
+      <a class="mail" href="mailto:contact@fashionholic.example">contact@fashionholic.example</a>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <article class="wrap legal pad">
+      <p class="kicker">Legal</p>
+      <h2>Privacy Policy</h2>
+      <p class="date">Last updated: 3 October 2026</p>
+      <div class="txt">
+        <p>Fashionholic is an independent editorial storefront that recommends men's clothing. This Privacy Policy explains how we handle information when you visit this website. It is written to stand on its own: you should be able to read this section and know what we collect, what we do not, and how affiliate links work.</p>
+
+        <h3>Affiliate links</h3>
+        <p>Many of the product links on Fashionholic are affiliate links. If you click a link and then buy something from a retailer (for example Amazon or Flipkart), we may receive a commission at no extra cost to you. Affiliate partners may set their own cookies and collect data under their own privacy policies. We do not control those third-party sites, their checkout, or their advertising networks. Following an affiliate link is a visit to that retailer, not a purchase from Fashionholic.</p>
+
+        <h3>What we do not collect</h3>
+        <p>We do not operate a shopping cart, process payments, or collect credit-card, bank, UPI, or wallet details. Purchases are completed on the retailer's website. We do not create customer accounts on this site and we do not store shipping addresses, sizes, or order histories. If a retailer asks you to log in, that relationship is between you and them.</p>
+
+        <h3>Cookies and analytics</h3>
+        <p>This site may use basic cookies or similar technologies to remember simple preferences and to understand which pages are visited. If we use an analytics service, it typically records anonymous or aggregated information such as pages viewed, approximate region, device type, and referral source — not your name or payment details. You can block or delete cookies in your browser. The site remains readable without them. Third-party retailers you visit after clicking a link may set additional cookies; those are governed by the retailer, not by us.</p>
+
+        <h3>Email you send us</h3>
+        <p>If you write to contact@fashionholic.example, we use that correspondence only to reply. We do not sell, rent, or trade your contact details. We keep emails as long as needed to resolve your request, then delete or archive them in the ordinary course of running a small editorial site.</p>
+
+        <h3>Changes and questions</h3>
+        <p>We may update this policy from time to time. The current version is always published on this page with the date above. Questions about privacy, cookies, or affiliate disclosure can be sent to contact@fashionholic.example. We will answer as promptly as a small team can.</p>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>© 2026 Fashionholic. Affiliate storefront.</p>
+    <p>Some links earn us a commission. You never pay extra.</p>
+  </div>
+</footer>
+
+</body>
+</html>
